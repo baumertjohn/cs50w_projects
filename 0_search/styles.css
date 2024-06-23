@@ -1,0 +1,86 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: right;
+  padding: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color-scheme: normal;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+th {
+  text-align: left;
+}
+
+td input {
+    width: 500px;
+}
+
+th, td {
+    padding: 5px
+}
+
+button {
+  height: 35px;
+  width: 125px;
+  margin: 0px 10px;
+  border-style: none;
+  border-radius: 5px;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    font-size: 4em;
+    font-weight: bold;
+}
+.search_box {
+  display: flex;
+  justify-content: center;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+  /* background-color: blue; */
+}
+
+.submit_adv {
+  display: flex;
+  justify-content: right;
+  padding: 25px;
+  /* color: white;
+    background-color: blue; */
+}
+
+.submit_adv button {
+  color: white;
+  background-color: rgb(109, 160, 228);
+  border: 0;
+  border-radius: 5px;
+}
+
+.input input,
+textarea {
+  margin: 10px 0 0 0;
+  /* width: 100%; */
+  /* min-height: 2em;
+  max-height: 4em; */
+  height: 40px;
+  width: 440px;
+  border-radius: 20px;
+  background-color: var(--background-col);
+  color: var(--text-col);
+  padding-left: 25px;
+  font-size: 1.25em;
+}
