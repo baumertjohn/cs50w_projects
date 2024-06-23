@@ -10,7 +10,7 @@ nav {
 
 nav a {
   text-decoration: none;
-  color-scheme: normal;
+  color: black;
 }
 
 nav a:hover {
@@ -42,6 +42,11 @@ button {
     justify-content: center;
     font-size: 4em;
     font-weight: bold;
+}
+
+.heading_small {
+  display: flex;
+  justify-content: center;
 }
 .search_box {
   display: flex;
