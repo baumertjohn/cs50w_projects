@@ -37,5 +37,13 @@ def search_results(request):
     )
 
 
+def new_page(request):
+    if request.POST:
+        page_title = request.POST.get("title")
+        page_text = request.POST.get("text")
+        print(page_title, page_text)
+    return render(request, "encyclopedia/new_page.html")
+
+
 def custom_404(request):
     return render(request, "encyclopedia/404.html")
