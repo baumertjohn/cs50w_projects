@@ -40,9 +40,26 @@ def search_results(request):
 def new_page(request):
     if request.POST:
         page_title = request.POST.get("title")
-        page_text = request.POST.get("text")
-        print(page_title, page_text)
-    return render(request, "encyclopedia/new_page.html")
+        page_content = request.POST.get("content")
+        if util.get_entry(page_title):  # Check for existing page
+            return render(
+                request,
+                "encyclopedia/new_page.html",
+                {
+                    "error": True,
+                    "page_title": f'"{page_title}" exists, change name.',
+                    "page_content": page_content,
+                },
+            )
+        else:
+            formatted_content = f"# {page_title}\n\n{page_content}"
+            util.save_entry(page_title, formatted_content)
+            return redirect("wiki_page", name=page_title)
+    return render(
+        request,
+        "encyclopedia/new_page.html",
+        {"error": False, "page_title": "Page Title", "page_content": ""},
+    )
 
 
 def custom_404(request):
