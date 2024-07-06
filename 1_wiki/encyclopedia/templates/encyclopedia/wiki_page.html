@@ -6,4 +6,10 @@
 
 {% block body %}
     {{ page_text|safe }}
+    <div style="padding-top: 50px;">
+        <form method="GET" action="{% url 'edit_page' %}">
+            <input type="hidden" name="title" value="{{ title }}">
+            <button type="submit" class="btn btn-primary">Edit Page</button>
+        </form>
+    </div>
 {% endblock %}

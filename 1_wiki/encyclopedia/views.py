@@ -62,5 +62,23 @@ def new_page(request):
     )
 
 
+def edit_page(request):
+    if request.POST:
+        page_title = request.POST.get("title")
+        page_content = request.POST.get("content")
+        formatted_content = f"# {page_title}\n\n{page_content}"
+        util.save_entry(page_title, formatted_content)
+        return redirect("wiki_page", name=page_title)
+    page_title = request.GET.get("title")
+    page_text = util.get_entry(page_title).splitlines()
+    title = page_text[0][1:]
+    content = "\n".join(page_text[2:])
+    return render(
+        request,
+        "encyclopedia/edit_page.html",
+        {"title": title, "content": content},
+    )
+
+
 def custom_404(request):
     return render(request, "encyclopedia/404.html")

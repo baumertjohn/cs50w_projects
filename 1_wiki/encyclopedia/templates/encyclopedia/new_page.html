@@ -13,11 +13,11 @@
         {% csrf_token %}
         <div class="form-group">
             <label for="newPageTitle">{{ page_title }}</label>
-            <input type="text" class="form-control" id="newPageTitle" name="title" placeholder="Title of page...">
+            <input type="text" class="form-control" id="newPageTitle" name="title" placeholder="Title of page..." required>
         </div>
         <div class="form-group">
             <label for="newPageContent">Page Content</label>
-            <textarea class="form-control" id="newPageContent" name="content" rows="10">{{ page_content }}</textarea>
+            <textarea class="form-control" id="newPageContent" name="content" rows="10" required>{{ page_content }}</textarea>
         </div>
         <button type="submit" class="btn btn-primary">Create New Page</button>
     </form>
